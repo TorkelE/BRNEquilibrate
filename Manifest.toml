@@ -31,18 +31,6 @@ git-tree-sha1 = "6cfaf56193f5bf6ac6b1b033b994ef3808c5d831"
 uuid = "7c1d4256-1411-5781-91ec-d7bc3513ac07"
 version = "0.1.2"
 
-[[FixedPolynomials]]
-deps = ["LinearAlgebra", "MultivariatePolynomials", "Test"]
-git-tree-sha1 = "32ec33fe4387eb165461b7141d4be732097086ad"
-uuid = "3dd14ad9-0029-526e-86e9-8aa0bdd2ab0d"
-version = "0.4.0"
-
-[[HomotopyContinuation]]
-deps = ["DynamicPolynomials", "FixedPolynomials", "LinearAlgebra", "MultivariatePolynomials", "Printf", "ProgressMeter", "Random", "StaticPolynomials", "Test", "TreeViews"]
-git-tree-sha1 = "072401dda2cc4870e5e6c5503e8c5e588b7a664b"
-uuid = "f213a82b-91d6-5c5d-acf7-10f1c761b327"
-version = "0.3.3"
-
 [[InteractiveUtils]]
 deps = ["LinearAlgebra", "Markdown"]
 uuid = "b77e0a4c-d291-57a0-90e8-8db25a27a240"
@@ -86,12 +74,6 @@ uuid = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
 [[Printf]]
 deps = ["Unicode"]
 uuid = "de0858da-6303-5e67-8744-51eddeeeb8d7"
-
-[[ProgressMeter]]
-deps = ["Distributed", "Printf", "Random", "Test"]
-git-tree-sha1 = "5b55c2c974084eab2689ec0d1d5245561b22aeb0"
-uuid = "92933f4c-e287-5a05-a399-4b506db050ca"
-version = "0.6.1"
 
 [[REPL]]
 deps = ["InteractiveUtils", "Markdown", "Sockets"]
@@ -153,12 +135,6 @@ deps = ["InteractiveUtils", "LinearAlgebra", "Random", "Statistics", "Test"]
 git-tree-sha1 = "ebc5c2a27d91d5ec611a9861168182e2168effd3"
 uuid = "90137ffa-7385-5640-81b9-e52037218182"
 version = "0.9.2"
-
-[[StaticPolynomials]]
-deps = ["LinearAlgebra", "MultivariatePolynomials", "StaticArrays", "Test"]
-git-tree-sha1 = "38a7ce19a8233a3f155b6d193d8097925807391c"
-uuid = "62e018b1-6e46-5407-a5a7-97d4fbcae734"
-version = "0.3.0"
 
 [[Statistics]]
 deps = ["LinearAlgebra", "SparseArrays"]
