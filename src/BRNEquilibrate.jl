@@ -2,7 +2,6 @@
 module BRNEquilibrate
 
 using DiffEqBase
-using HomotopyContinuation
 using LinearAlgebra
 using DynamicPolynomials
 
