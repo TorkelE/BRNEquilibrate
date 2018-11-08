@@ -7,6 +7,7 @@ using LinearAlgebra
 using DynamicPolynomials
 
 include("equilibrate.jl")
+include("bifurcations.jl")
 
 BRN_test_func() = println("BRNEquilibrate is avaiable")
 
