@@ -3,7 +3,7 @@ module BRNEquilibrate
 
 using DiffEqBase
 using HomotopyContinuation
-using Linear Algebra
+using LinearAlgebra
 using DynamicPolynomials
 
 include("equilibrate.jl")
