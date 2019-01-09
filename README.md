@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/TorkelE/BRNEquilibrate.svg?branch=master)](https://travis-ci.org/TorkelE/BRNEquilibrate)
+[![Build status](https://ci.appveyor.com/api/projects/status/f72vlmuvlpux7x6p?svg=true)](https://ci.appveyor.com/project/TorkelE/BRNEquilibrate)
+[![codecov](https://codecov.io/gh/TorkelE/Why.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/TorkelE/BRNEquilibrate)
+[![Coverage Status](https://coveralls.io/repos/github/TorkelE/Why.jl/badge.svg)](https://coveralls.io/github/TorkelE/BRNEquilibrate)
 # BRNEquilibrate
 A package for finding steady states to biochemical reaction network models. Detailed docs coming soon.
 
