@@ -1,3 +1,4 @@
+#Creates a bifurcation diagram of a specific reaction network and for the given parameter and range.
 function bifurcation_diagram(model::DiffEqBase.AbstractReactionNetwork, pOrg::AbstractVector, parameter::Symbol, range::AbstractVector, replacements::Expr...;mult=false::Bool,progress_update=2147483640.::Float64)
     p_idx = findfirst(model.params.==parameter)
     mult && (range*=pOrg[p_idx])
@@ -15,6 +16,7 @@ function bifurcation_diagram(model::DiffEqBase.AbstractReactionNetwork, pOrg::Ab
     return bif_diagram(parameter,range,fps,stabilities,colors,deepcopy(model.syms))
 end
 
+#Bifurcation diagram structure, contains all the information in a bifurcation diagram.
 struct bif_diagram
     param::Symbol
     param_values::AbstractVector
@@ -24,6 +26,7 @@ struct bif_diagram
     reactant_syms::Vector{Symbol}
 end
 
+#Creates a two dimensional bifurcation diagram of a specific reaction network and for the given parameters and ranges.
 function bifurcation_diagram_2d(model::DiffEqBase.AbstractReactionNetwork, pOrg::AbstractVector, parameter1::Symbol, parameter2::Symbol, range1::AbstractVector, range2::AbstractVector, replacements::Expr...;mult=false::Bool,progress_update=2147483640.::Float64)
     p_idx1 = findfirst(model.params.==parameter1); p_idx2 = findfirst(model.params.==parameter2);
     mult && (range1*=pOrg[p_idx1]; range2*=pOrg[p_idx2];)
@@ -41,6 +44,7 @@ function bifurcation_diagram_2d(model::DiffEqBase.AbstractReactionNetwork, pOrg:
     return bif_diagram_2d(parameter1,parameter2,range1,range2,fps,stabilities,colors,deepcopy(model.syms))
 end
 
+#Two dimensional bifurcation diagram structure, contains all the information in a two dimensional bifurcation diagram.
 struct bif_diagram_2d
     param1::Symbol
     param2::Symbol
@@ -52,12 +56,14 @@ struct bif_diagram_2d
     reactant_syms::Array{Symbol}
 end
 
+#Function for determening stability of a reaction network. Only used internally by bifurcation diagram functions. Not to be used by the user.
 function stability_internal(jacobian::Matrix{Expr},var_vals::Dict,par_vals::Dict)
     jac = map(val->recursive_replace!(recursive_replace!(val,var_vals),par_vals),deepcopy(jacobian))
     eigenvalues = eigvals(eval.(jac))
     return (maximum(real(eigenvalues))<1e-6,any(imag(eigenvalues).>1e-6))
 end
 
+#Determines the color of a point in the bifurcation diagram for the given stability information.
 function bifurcation_color(stability::Tuple{Bool,Bool})
     stability[1]&&stability[2]&&(return :green)
     stability[1]&&(return :blue)
